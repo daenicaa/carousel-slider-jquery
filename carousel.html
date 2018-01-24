@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+	<body>
+		<div class="slide-wrap">
+		  	<div class="slide-list">
+		    	<div class="slide">1</div>
+			    <div class="slide">2</div>
+			    <div class="slide">3</div>
+			    <div class="slide">4</div>
+			    <div class="slide">5</div>
+			    <div class="slide">6</div>
+			    <div class="slide">7</div>
+			    <div class="slide">8</div>
+			    <div class="slide">9</div>
+			    <div class="slide">10</div>
+		  	</div>
+		</div>
+
+		<button class="prev">Previous</button>
+		<button class="next">Next</button>
+	</body>
+
+	<script>
+		var slide_width = $(".slide").width();
+		var slide_margin = parseInt($(".slide").css('margin-left')) + parseInt($(".slide").css('margin-right'));
+		var slide_twidth = slide_width + slide_margin;
+
+		var list_width = $(".slide-list").width();
+		var wrap_width = $(".slide-wrap").width();
+		var total_width =  list_width - wrap_width;
+		var counter = 0;
+
+
+		$(".next").click(function(){
+		   counter +=slide_twidth;
+		   
+		   $(".slide-list").css({"left": "-"+counter+"px"});
+		   $(".prev").css({"pointer-events": "unset", "opacity": "1"});
+		   
+		   if(counter >= total_width){
+		   		$(".next").css({"pointer-events": "none", "opacity": ".5"});
+		   }
+		});
+
+
+		$(".prev").click(function(){
+		   counter -=slide_twidth;
+		   //alert(counter);
+		   $(".slide-list").css({"left": "-"+counter+"px"});
+		   $(".next").css({"pointer-events": "unset", "opacity": "1"});
+		   
+		   if(counter <= 0){
+		   		$(".prev").css({"pointer-events": "none", "opacity": ".5"});
+		   }
+		});
+	</script>
+</html>

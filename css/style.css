@@ -1,0 +1,43 @@
+.slide{
+  width: 150px;
+  height: 100px;
+  background-color: pink;
+  margin: 5px;
+}
+
+.slide:nth-child(even){
+  background-color: teal;
+}
+
+.slide-list{
+  display:flex;
+  overflow-x: auto;
+  width: auto;
+  position: absolute;
+}
+
+
+.slide-wrap{
+  max-width:500px;
+  overflow:hidden;
+  display: block;
+  position: relative;
+  width: auto;
+  height: 110px;
+}
+
+.prev, .next{
+    color: #fff;
+    width: 100px;
+    padding: 10px;
+    background: #428bca;
+    box-shadow: 0 2px 4px -1px rgba(0,0,0,.2);
+    border: transparent;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.prev{
+  pointer-events: none;
+  opacity: .5;
+}
