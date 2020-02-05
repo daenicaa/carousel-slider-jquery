@@ -3,6 +3,11 @@
   height: 100px;
   background-color: pink;
   margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 60px;
+  color: #FFF;
 }
 
 .slide:nth-child(even){
